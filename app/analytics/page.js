@@ -146,7 +146,7 @@ export default function AnalyticsPage() {
           {[
             {
               title: 'Total Screen Time',
-              value: ${Math.round(logs.reduce((sum, log) => sum + log.duration, 0) / 60)}h,
+              value: `${Math.round(logs.reduce((sum, log) => sum + log.duration, 0) / 60)}h`,
               change: '+12%',
               icon: ClockIcon,
               color: 'from-blue-500 to-purple-600',
@@ -161,7 +161,7 @@ export default function AnalyticsPage() {
             {
               title: 'Most Used Category',
               value: chartData.category[0]?.category || 'N/A',
-              change: ${chartData.category[0]?.percentage || 0}%,
+              change: `${chartData.category[0]?.percentage || 0}%`,
               icon: ChartBarIcon,
               color: 'from-orange-500 to-red-600',
             },
@@ -174,7 +174,7 @@ export default function AnalyticsPage() {
               className="glass-effect rounded-xl p-6 card-hover"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={p-3 rounded-lg bg-gradient-to-r ${stat.color}}>
+                <div className={`p-3 rounded-lg bg-gradient-to-r ${stat.color}`}>
                   <stat.icon className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-green-400 text-sm font-medium">{stat.change}</div>
@@ -233,13 +233,13 @@ export default function AnalyticsPage() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ category, percentage }) => ${category}: ${percentage}%}
+                    label={({ category, percentage }) => `${category}: ${percentage}%`}
                     outerRadius={100}
                     fill="#8884d8"
                     dataKey="minutes"
                   >
                     {chartData.category.map((entry, index) => (
-                      <Cell key={cell-${index}} fill={COLORS[index % COLORS.length]} />
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
                   <Tooltip

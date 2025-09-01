@@ -118,7 +118,7 @@ export default function ChallengesPage() {
 
   const deleteChallenge = async (challengeId) => {
     try {
-      const res = await fetch(/api/challenges/${challengeId}, {
+      const res = await fetch(`/api/challenges/${challengeId}`, {
         method: 'DELETE',
       });
       if (res.ok) {
@@ -131,7 +131,7 @@ export default function ChallengesPage() {
 
   const markChallengeComplete = async (challengeId) => {
     try {
-      const res = await fetch(/api/challenges/${challengeId}, {
+      const res = await fetch(`/api/challenges/${challengeId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ completed: true }),
@@ -219,7 +219,7 @@ export default function ChallengesPage() {
               className="glass-effect rounded-xl p-6 card-hover"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={p-3 rounded-lg bg-gradient-to-r ${stat.color}}>
+                <div className={`p-3 rounded-lg bg-gradient-to-r ${stat.color}`}>
                   <stat.icon className="h-6 w-6 text-white" />
                 </div>
               </div>
@@ -444,7 +444,7 @@ export default function ChallengesPage() {
                                         ? 'from-yellow-500 to-orange-500'
                                         : 'from-orange-500 to-red-500'
                                     }`}
-                                    style={{ width: ${Math.min(progress, 100)}% }}
+                                    style={{ width: `${Math.min(progress, 100)}%` }}
                                   ></div>
                                 </div>
                               </div>
