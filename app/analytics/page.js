@@ -308,7 +308,7 @@ export default function AnalyticsPage() {
             <div className="bg-green-500 bg-opacity-20 rounded-lg p-4">
               <h4 className="text-white font-medium mb-2">Productivity Tip</h4>
               <p className="text-gray-300 text-sm">
-                Your productivity score improved by 8% this week! Keep up the great work.
+                Your productivity score improved by 8% this week! Keep up the great work. Try to allocate more time to productive categories.
               </p>
             </div>
           </div>
