@@ -27,6 +27,9 @@ def main():
     
     print("Checking application health... OK")
     time.sleep(0.5)
+
+    print("Checking database connection... OK")
+    time.sleep(0.5)
     
     print("\nHealth Metrics:")
     print("   - Uptime: 98%")
