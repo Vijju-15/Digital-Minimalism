@@ -2,12 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { signIn, getProviders } from 'next-auth/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { ArrowRightIcon, ArrowLeftIcon, CpuChipIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-export default function SignIn() {
+function SignInContent() {
   const [providers, setProviders] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
@@ -180,5 +180,13 @@ export default function SignIn() {
         </motion.div>
       </motion.div>
     </div>
+  );
+}
+
+export default function SignIn() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInContent />
+    </Suspense>
   );
 }
